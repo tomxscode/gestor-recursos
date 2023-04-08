@@ -39,7 +39,7 @@ $con->close();
   <label>Rol:</label>
   <select name="role">
     <option value="usuario">Usuario</option>
-    <option value="administrador">Administrador</option>
+    <option value="admin">Administrador</option>
     <option value="encargado">Encargado</option>
   </select>
 
