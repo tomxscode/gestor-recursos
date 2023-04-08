@@ -17,7 +17,7 @@ $resultado = mysqli_query($con, $query);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear categoría</title>
+    <title>Editar categoría</title>
     <?php require "head.php"; ?>
 </head>
 
@@ -25,6 +25,7 @@ $resultado = mysqli_query($con, $query);
     <?php require "header.php"; ?>
     <div class="container pt-2">
         <div class="row">
+            <h1>Registros:</h1>
             <?php
             // Verificar si se encontraron categorías
             if (mysqli_num_rows($resultado) > 0) {

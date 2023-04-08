@@ -7,15 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los datos del formulario
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
+    $descripcion = $_POST['descripcion'];
 
     // Preparar consulta SQL
-    $sql = "UPDATE categorias SET nombre = ? WHERE id = ?";
+    $sql = "UPDATE categorias SET nombre = ?, descripcion = ? WHERE id = ?";
 
     // Preparar la sentencia
     $stmt = $con->prepare($sql);
 
     // Asignar parámetros
-    $stmt->bind_param('si', $nombre, $id);
+    $stmt->bind_param('ssi', $nombre, $descripcion, $id);
 
     // Ejecutar consulta y verificar resultado
     if ($stmt->execute()) {
@@ -62,22 +63,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <title>Editar categoría</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar categoria</title>
+    <?php require "head.php"; ?>
 </head>
+
 <body>
-    <h1>Editar categoría</h1>
-
-    <form method="POST">
-        <input type="hidden" name="id" value="<?php echo $categoria['id']; ?>">
-
-        <label>
-            Nombre:
-            <input type="text" name="nombre" value="<?php echo $categoria['nombre']; ?>">
-        </label>
-
-        <button type="submit">Guardar cambios</button>
-    </form>
+    <?php require "header.php"; ?>
+    <div class="container pt-2">
+        <div class="row">
+            <h1>Editar categoría</h1>
+            <form method="POST">
+                <div class="form-group">
+                    <input type="hidden" name="id" value="<?php echo $categoria['id']; ?>">
+                    <label>
+                        Nombre:
+                    </label>
+                    <input type="text" name="nombre" class="form-control" value="<?php echo $categoria['nombre']; ?>">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="id" value="<?php echo $categoria['id']; ?>">
+                    <label>
+                        Descripción:
+                    </label>
+                    <input type="text" name="descripcion" class="form-control" value="<?php echo $categoria['descripcion']; ?>">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class='form-control btn btn-info'>Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
