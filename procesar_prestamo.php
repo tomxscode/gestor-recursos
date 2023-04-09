@@ -7,7 +7,7 @@ $fecha_prestamo = date('Y-m-d');
 $fecha_devolucion = $_POST['fecha_devolucion'];
 $estudiante = $_POST['estudiante'];
 
-$sql = "INSERT INTO prestamos (articulo_id, fecha_prestamo, fecha_devolucion, estudiante, estado) VALUES ($articulo_id, '$fecha_prestamo', '$fecha_devolucion', '$estudiante', 0)";
+$sql = "INSERT INTO prestamos (articulo_id, fecha_prestamo, fecha_devolucion, estudiante, entregado) VALUES ($articulo_id, '$fecha_prestamo', '$fecha_devolucion', '$estudiante', 0)";
 $resultado = mysqli_query($con, $sql);
 if ($resultado) {
     echo "Prestamo exitoso";
