@@ -10,12 +10,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Inicio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ver_prestamos.php">Préstamos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
                 <?php
                 if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'encargado' || $_SESSION['user_role'] == 'admin'): ?>
                     <li class='nav-item dropdown'>
@@ -29,6 +23,8 @@
                             <a class='dropdown-item' href='crear_articulo.php'>Crear artículo
                             </a>
                             <a class='dropdown-item' href='ver_articulos.php'>Ver artículos
+                            </a>
+                            <a class='dropdown-item' href='ver_prestamos.php'>Ver préstamos
                             </a>
                         </div>
                     </li>
