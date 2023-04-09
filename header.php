@@ -28,6 +28,8 @@
                             </a>
                             <a class='dropdown-item' href='crear_articulo.php'>Crear artículo
                             </a>
+                            <a class='dropdown-item' href='ver_articulos.php'>Ver artículos
+                            </a>
                         </div>
                     </li>
                 <?php endif; ?>
