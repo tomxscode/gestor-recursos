@@ -47,6 +47,9 @@
                     </li>
                 <?php endif; ?>
                 <li class="nav-item">
+                    <a class="nav-link" href="micuenta.php">Mi cuenta</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="logout.php">Cerrar sesión</a>
                 </li>
             </ul>
