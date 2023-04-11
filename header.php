@@ -39,6 +39,10 @@
                         <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
                             <a class='dropdown-item' href='crear_categoria.php'>Crear categoría
                             </a>
+                            <a class='dropdown-item' href='agregar_funcionario.php'>Registrar funcionario
+                            </a>
+                            <a class='dropdown-item' href='ver_funcionarios.php'>Listar funcionarios
+                            </a>
                         </div>
                     </li>
                 <?php endif; ?>
