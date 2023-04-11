@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start(); // Iniciamos sesión
 
 require_once 'conexion.php'; // Conexión a la base de datos
@@ -49,26 +49,45 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Login</title>
+  <title>Inicio de sesión</title>
+  <?php require("head.php") ?>
 </head>
+
 <body>
-  <h1>Login</h1>
-  <?php if ($error): ?>
-    <p><?php echo $error; ?></p>
-  <?php endif; ?>
-  <form method="POST">
-    <div>
-      <label for="username">Usuario:</label>
-      <input type="text" id="username" name="username">
+  <div class="container">
+    <div class="row p-3" style="height: 100vh;">
+      <div class="col-md-8 mx-auto align-middle">
+        <h1>Inicio de sesión</h1>
+        <p>Para poder acceder al sitio necesitas credenciales de acceso</p>
+        <?php if ($error): ?>
+          <p>
+          <div class="alert alert-danger" role="alert">
+            ¡Sucedió un error!: <br>
+            <?php echo $error; ?>
+            <br>
+            Si crees que es un error comunicalo con tu administrador.
+          </div>
+          </p>
+        <?php endif; ?>
+        <form method="POST">
+          <div class="form-group">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="submit" name="submit" value="Iniciar sesión" class="form-control btn btn-primary">
+            <small>¿No tienes creedenciales de acceso?, solicitalas con tu administrador</small>
+          </div>
+        </form>
+      </div>
     </div>
-    <div>
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password">
-    </div>
-    <div>
-      <input type="submit" name="submit" value="Iniciar sesión">
-    </div>
-  </form>
+  </div>
 </body>
+
 </html>

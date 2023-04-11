@@ -16,10 +16,11 @@ if ($resultado) {
     $_result = mysqli_query($con, $_sql);
     if ($_result) {
         echo "Se redujo en 1";
+        header('Location: ver_prestamos.php');
     } else {
         echo "Error";
     }
 } else {
-    echo "Prestamo fallido";
+    echo "Prestamo fallido" . mysqli_error($resultado);
 }
 ?>
