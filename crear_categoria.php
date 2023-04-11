@@ -1,6 +1,7 @@
 <?php
 include('conexion.php');
-require('verificar_sesion.php');
+//require('verificar_sesion.php');
+require('verificar_admin.php');
 ?>
 
 <!DOCTYPE html>
