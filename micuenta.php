@@ -25,7 +25,7 @@ require_once('verificar_sesion.php');
       <div class="row">
         <div class="col-md-6">
           <h3>Mi información</h3>
-          <form>
+          <form method="post" action="modificar_info.php">
             <?php
             $userid = $_SESSION['user_id'];
             //$query2 = "SELECT a.*, c.nombre AS nombre_categoria FROM articulos a JOIN categorias c ON a.categoria_id = c.id";
