@@ -30,6 +30,20 @@ class Articulo {
     }
   }
 
+  public function buscarArticuloPorNombre($nombre) {
+    $sql = "SELECT * FROM articulos WHERE nombre LIKE '%$nombre%'";
+    $resultado = $this->conn->query($sql);
+
+    if ($resultado->num_rows > 0) {
+      while ($fila = $resultado->fetch_assoc()) {
+        $articulos[] = $fila;
+      }
+      return $articulos;
+    } else {
+      return "No se encontraron resultados";
+    }
+  }
+
 
 }
 

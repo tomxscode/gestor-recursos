@@ -8,6 +8,8 @@
 </head>
 <body>
   <h1>Artículos</h1>
+  <input type="text" id="buscarArticulo">
+  <button id="buscar">Buscar</button>
   <ul id="lista-articulos">
   <!-- Aqui se mostraran los artículos -->
   </ul>
